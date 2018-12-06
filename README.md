@@ -94,13 +94,13 @@ iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j DNAT --to-destinatio
 Now our container should be reachable through the 80 port using raspberry's pubic ip.
 
 ## Outcomes
-Even though all of our settings and configurations seem to be correct we didn't manage to have access to the web-server.
+Eventhough all of our settings and configurations seem to be correct we didn't manage to have access to the web-server.
 Fetching random numbers from C2 was done correctly. Using curl C2:8080 we were able to receive the data stream.
 
 ### Troubleshooting
-We checked that port forwarding was properly done using ``` iptables -t nat -L ```
-We tried to re-set it using ``` iptables -t nat -F ```and 
-
+We checked that port forwarding was properly done using ``` iptables -t nat -L ```\
+We tried to remove old settings using ``` iptables -t nat -F ```
+and re-set it again
 ```bash
 iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j DNAT --to-destination 10.0.3.11:80
 ```
