@@ -98,15 +98,16 @@ Even though all of our settings and configurations seem to be correct we didn't 
 Fetching random numbers from C2 was done correctly. Using curl C2:8080 we were able to receive the data stream.
 
 ### Troubleshooting
-We checked that port forwarding was properly done using ```bash iptables -t nat -L ```
-We tried to re-set it using ```bash iptables -t nat -F ```and 
+We checked that port forwarding was properly done using ``` iptables -t nat -L ```
+We tried to re-set it using ``` iptables -t nat -F ```and 
 
 ```bash
-iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j DNAT --to-destination 10.0.3.11:80```
-
-We used ```ifconfig -a ``` to check our host_nic.\
-We used ```journalctl -xe --follow ``` to fix container starting issues.\
+iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j DNAT --to-destination 10.0.3.11:80
+```
+We used ```ifconfig -a```to check our host_nic.\
+We used ```journalctl -xe --follow``` to fix container starting issues.\
 In order to troubleshoot lxc-net issues we used:
+
 ```bash
 sudo systemctl restart lxc-net
 sudo systemctl status lxc-net
