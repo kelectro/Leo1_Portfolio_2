@@ -1,7 +1,4 @@
-# Leo1_Portfolio_2
-**Group 3**\
-Kiagias Konstantinos\
-Loukas Athanasios
+# Linux Embedding Ssytems
 
 # Containers and scripting
 
