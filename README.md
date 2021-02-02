@@ -1,4 +1,4 @@
-# Linux Embedding Ssytems
+# Linux For Embedding Sytems
 
 # Containers and scripting
 
